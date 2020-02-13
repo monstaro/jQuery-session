@@ -1,14 +1,43 @@
-const $ = require('jquery');
-let btn = document.querySelector('button');
-btn.addEventListener('click', function(e){
-  e.preventDefault();
+
+
+
+
+$('button').on('click', function(e){
+  e.preventDefault()
+  }
+)
+
+$('#clear-btn').on('click', function() {
+  $('input').val('')
 })
 
-let clearBtn = document.querySelector('#clear-btn');
-clearBtn.addEventListener('click', function(){
-  document.querySelectorAll('input').forEach(input => {
-    input.value = "";
-  })
+$(':input[type="number"]').on('change', function() {
+  for (var i = 0; i < ($(':input[type="number"]').length); i++) {
+    localStorage.setItem('phone'+i, $(':input[type="number"]').eq(i).val())
+  }
 })
 
-console.log($('p').text())
+$(':input[type="number"]').on('change', function() {
+  for (var i = 0; i < ($(':input[type="number"]').length); i++) {
+    localStorage.setItem('phone'+i, $(':input[type="number"]').eq(i).val())
+  }
+})
+
+
+
+$(':input').val(localStorage.getItem(this.id))
+
+
+$("label[for='deny']").on('click', function () {
+  console.log($(this))
+  console.log(this)
+})
+
+
+
+$(document).ready(function() {
+  for (var i = 0; i < ($(':input[type="number"]').length); i++) {
+    $(':input[type="number"]').eq(i).val(localStorage.getItem('phone'+i))
+  }
+})
+
