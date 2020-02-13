@@ -9,3 +9,14 @@ clearBtn.addEventListener('click', function(){
     input.value = "";
   })
 })
+
+
+$(document).ready(function() {
+  $('label').addClass('green')
+  $('.phone').addClass('yellow')
+  $('label[for="email"]').addClass('blue')
+  console.log($('input:checked').attr('id'))
+  //if we add a 'checked' to the tag in the deny checkbox, it still only logs the first instance ^^. 
+  $('p').find('label').addClass('purple')
+  $('#clear-btn').addClass('red')
+})
